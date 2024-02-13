@@ -25,7 +25,13 @@ function validateForm(){
 
     //Validate first name and last name
     if(!isValidName(firstName.value) || !isValidName(lastName.value)){
-        alert('First name and last name should only contain letters and spaces');
+        alert('First name and last name should only contain letters, spaces, and periods ');
+        isValid = false;
+    }
+
+    //Validate birthdate 
+    if(birthdate.value === ''){
+        alert('Please Enter your Birth Date');
         isValid = false;
     }
 
@@ -51,8 +57,8 @@ function validateForm(){
 }  
 
 function isValidName(value){
-    //check if the value contains only letters and spaces
-    return /^[a-zA-Z\s]+$/.test(value);
+    //check if the value contains only letters, spaces, and  periods 
+    return /^[a-zA-Z\s.]+$/.test(value);
 }
 
 function isValidEmail(value){
